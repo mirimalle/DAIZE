@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAIZE</title>
+<meta name="description" content="DAIZE — Content Creator">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+  }
+}
+</script>
+<script>
+  (function () {
+    var stored = localStorage.getItem('daize-theme');
+    var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+</head>
+<body class="is-loading">
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__mark">DAIZE</div>
+  <div class="preloader__count"><span id="preloaderCount">0</span>%</div>
+  <div class="preloader__bar"><span class="preloader__bar-fill" id="preloaderBarFill"></span></div>
+</div>
+
+<div class="frame-marks" aria-hidden="true">
+  <span class="frame-marks__corner frame-marks__corner--tl"></span>
+  <span class="frame-marks__corner frame-marks__corner--tr"></span>
+  <span class="frame-marks__corner frame-marks__corner--bl"></span>
+  <span class="frame-marks__corner frame-marks__corner--br"></span>
+  <span class="frame-marks__tick frame-marks__tick--top"></span>
+  <span class="frame-marks__tick frame-marks__tick--bottom"></span>
+  <span class="frame-marks__tick frame-marks__tick--left"></span>
+  <span class="frame-marks__tick frame-marks__tick--right"></span>
+</div>
+
+<div class="grain"></div>
+<div class="cursor-dot" id="cursorDot"><span class="cursor-dot__label">View</span></div>
+
+<header class="nav">
+  <a href="#top" class="nav__wordmark">DAIZE</a>
+  <div class="nav__right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
+      <svg class="theme-toggle__moon" viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="theme-toggle__sun" viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+      <span class="nav__toggle-label">Menu</span>
+      <span class="nav__toggle-icon"><span></span><span></span></span>
+    </button>
+  </div>
+  <div class="nav__progress" id="navProgress"></div>
+</header>
+
+<nav class="nav__menu" id="navMenu">
+  <div class="nav__menu-inner">
+    <a href="#top" class="nav__link"><span class="nav__link-num">[00]</span><span class="nav__link-text">Home</span></a>
+    <a href="#about" class="nav__link"><span class="nav__link-num">[01]</span><span class="nav__link-text">About</span></a>
+    <a href="#work" class="nav__link"><span class="nav__link-num">[02]</span><span class="nav__link-text">Work</span></a>
+    <a href="#contact" class="nav__link"><span class="nav__link-num">[03]</span><span class="nav__link-text">Contact</span></a>
+  </div>
+  <div class="nav__menu-footer">
+    <span class="nav__menu-tag">DAIZE — Content Creator</span>
+    <div class="nav__menu-socials">
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+      <a href="#">TikTok</a>
+      <a href="#">Twitter</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__logo" id="heroLogo" aria-hidden="true">
+      <canvas id="heroLogoCanvas" class="hero__logo-canvas"></canvas>
+    </div>
+    <div class="hero__content reveal">
+      <h1 class="visually-hidden">DAIZE — Content Creator &amp; Storyteller</h1>
+      <p class="hero__eyebrow">Content Creator &amp; Storyteller</p>
+      <p class="hero__sub">Crafting visual stories,<br>one frame at a time.</p>
+    </div>
+    <a href="#about" class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </a>
+    <div class="hero__status">
+      <span class="hero__status-dot"></span>
+      <span>Available for select projects</span>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Photography</span>
+      <span>Film</span>
+      <span>Direction</span>
+      <span>Editorial</span>
+      <span>Brand Content</span>
+      <span>Storytelling</span>
+      <span>Photography</span>
+      <span>Film</span>
+      <span>Direction</span>
+      <span>Editorial</span>
+      <span>Brand Content</span>
+      <span>Storytelling</span>
+    </div>
+  </div>
+
+  <section id="about" class="about" data-watermark="01">
+    <div class="about__index reveal">[01] About</div>
+    <div class="about__grid">
+      <div class="about__visual reveal">
+        <div class="about__frame"><img src="assets/about-portrait.png" alt="Portrait of DAIZE" loading="lazy"></div>
+      </div>
+      <div class="about__text reveal">
+        <h2>Independent creator based between the studio and the street, telling stories through image and motion.</h2>
+        <p>DAIZE is a content practice built on curiosity — blending photography, film, and design into work that feels personal and considered. Every project starts with a question and ends with a frame worth keeping.</p>
+        <div class="about__stats">
+          <div><span data-count="120" data-suffix="K+">0</span><small>Community</small></div>
+          <div><span data-count="80" data-suffix="+">0</span><small>Projects</small></div>
+          <div><span data-count="6" data-suffix="">0</span><small>Years</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="work" data-watermark="02">
+    <div class="work__header reveal">
+      <div class="about__index">[02] Selected Work</div>
+      <h2>Recent projects</h2>
+    </div>
+    <div class="work__list">
+      <article class="work__item reveal">
+        <div class="work__media"><img src="assets/work-golden-hour.png" alt="Golden Hour Series" loading="lazy"></div>
+        <div class="work__meta">
+          <h3>Golden Hour Series</h3>
+          <p>Photography — 2026</p>
+        </div>
+      </article>
+      <article class="work__item reveal">
+        <div class="work__media"><img src="assets/work-urban-rituals.png" alt="Urban Rituals" loading="lazy"></div>
+        <div class="work__meta">
+          <h3>Urban Rituals</h3>
+          <p>Short Film — 2025</p>
+        </div>
+      </article>
+      <article class="work__item reveal">
+        <div class="work__media"><img src="assets/work-studio-sessions.png" alt="Studio Sessions" loading="lazy"></div>
+        <div class="work__meta">
+          <h3>Studio Sessions</h3>
+          <p>Brand Content — 2025</p>
+        </div>
+      </article>
+      <article class="work__item reveal">
+        <div class="work__media"><img src="assets/work-quiet-hours.png" alt="Quiet Hours" loading="lazy"></div>
+        <div class="work__meta">
+          <h3>Quiet Hours</h3>
+          <p>Editorial — 2024</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="contact__inner reveal">
+      <div class="about__index">[03] Contact</div>
+      <h2>Let's create<br>something together.</h2>
+      <a href="mailto:hello@daize.com" class="contact__email">hello@daize.com</a>
+      <div class="contact__socials">
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="#">TikTok</a>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span>© 2026 DAIZE</span>
+  <a href="#top">Back to top</a>
+</footer>
+
+<script type="module" src="assets/hero-scene.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

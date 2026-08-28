@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — DAIZE</title>
+<meta name="description" content="DAIZE — Social Media Agency. Selected work across campaigns, content, branding and strategy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="work.css">
+<script>
+  (function () {
+    var stored = localStorage.getItem('daize-theme');
+    var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+</head>
+<body id="top">
+
+<div class="grain"></div>
+<div class="cursor-dot" id="cursorDot"><span class="cursor-dot__label">View</span></div>
+
+<header class="wnav">
+  <a href="index.html" class="wnav__mark" aria-label="DAIZE — Home"><span class="wnav__mark-glyph"></span></a>
+
+  <nav class="wnav__links" aria-label="Primary">
+    <a href="index.html#about" class="wnav__link">About</a>
+    <a href="work.html" class="wnav__link is-active"><span class="wnav__dot"></span>Work</a>
+    <a href="#" class="wnav__link">Press</a>
+    <a href="#" class="wnav__link">Clients</a>
+    <div class="wnav__link wnav__link--drop">
+      Services
+      <div class="wnav__sub">
+        <a href="#">Social Strategy</a>
+        <a href="#">Content Production</a>
+        <a href="#">Paid Media</a>
+        <a href="#">Branding</a>
+      </div>
+    </div>
+    <a href="index.html#contact" class="wnav__link">Contact</a>
+  </nav>
+
+  <button class="theme-toggle wnav__theme" id="themeToggle" aria-label="Toggle light/dark theme">
+    <svg class="theme-toggle__moon" viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="theme-toggle__sun" viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  </button>
+</header>
+
+<main class="work-index">
+  <div class="work-index__head reveal">
+    <h1>Work</h1>
+  </div>
+
+  <div class="work-index__filters reveal" id="workFilters" role="tablist" aria-label="Filter work by category">
+    <button class="wf" data-filter="all" aria-pressed="true"><span class="wf__dot"></span>All</button>
+    <button class="wf" data-filter="campaign" aria-pressed="false"><span class="wf__dot"></span>Campaign</button>
+    <button class="wf" data-filter="branding" aria-pressed="false"><span class="wf__dot"></span>Branding</button>
+    <button class="wf" data-filter="content" aria-pressed="false"><span class="wf__dot"></span>Content</button>
+    <button class="wf" data-filter="video" aria-pressed="false"><span class="wf__dot"></span>Video</button>
+    <button class="wf" data-filter="strategy" aria-pressed="false"><span class="wf__dot"></span>Strategy</button>
+    <button class="wf" data-filter="photo" aria-pressed="false"><span class="wf__dot"></span>Photo</button>
+  </div>
+
+  <div class="work-index__grid" id="workGrid">
+
+    <article class="wcard reveal" data-category="campaign" style="--wr:4/3;">
+      <div class="wcard__media" data-index="01"></div>
+      <div class="wcard__meta">
+        <h3>Bloom Beauty — Campaign Launch</h3>
+        <span class="wcard__tag">[ Campaign ]</span>
+      </div>
+    </article>
+
+    <article class="wcard reveal" data-category="branding" style="--wr:4/3;">
+      <div class="wcard__media" data-index="02"></div>
+      <div class="wcard__meta">
+        <h3>Nordic Coffee Co. — Brand Refresh</h3>
+        <span class="wcard__tag">[ Branding ]</span>
+      </div>
+    </article>
+
+    <article class="wcard reveal" data-category="video" style="--wr:3/4;">
+      <div class="wcard__media" data-index="03"></div>
+      <div class="wcard__meta">
+        <h3>Studio Sessions — Behind the Scenes</h3>
+        <span class="wcard__tag">[ Video ]</span>
+      </div>
+    </article>
+
+    <article class="wcard reveal" data-category="content" style="--wr:1/1;">
+      <div class="wcard__media" data-index="04"></div>
+      <div class="wcard__meta">
+        <h3>Velo Cycles — Content Series</h3>
+        <span class="wcard__tag">[ Content ]</span>
+      </div>
+    </article>
+
+    <article class="wcard reveal" data-category="campaign" style="--wr:3/4.6;">
+      <div class="wcard__media" data-index="05"></div>
+      <div class="wcard__meta">
+        <h3>Home &amp; Co. — Interior Campaign</h3>
+        <span class="wcard__tag">[ Campaign ]</span>
+      </div>
+    </article>
+
+    <article class="wcard reveal" data-category="strategy" style="--wr:1/1.05;">
+      <div class="wcard__media" data-index="06"></div>
+      <div class="wcard__meta">
+        <h3>Fluid Skincare — Social Strategy</h3>
+        <span class="wcard__tag">[ Strategy ]</span>
+      </div>
+    </article>
+
+    <article class="wcard reveal" data-category="content" style="--wr:3/4;">
+      <div class="wcard__media" data-index="07"></div>
+      <div class="wcard__meta">
+        <h3>Terra Ceramics — Product Content</h3>
+        <span class="wcard__tag">[ Content ]</span>
+      </div>
+    </article>
+
+    <article class="wcard reveal" data-category="video" style="--wr:1/1;">
+      <div class="wcard__media" data-index="08"></div>
+      <div class="wcard__meta">
+        <h3>Wanderlust Travel — Reels Campaign</h3>
+        <span class="wcard__tag">[ Video ]</span>
+      </div>
+    </article>
+
+    <article class="wcard reveal" data-category="video" style="--wr:2/3.4;">
+      <div class="wcard__media" data-index="09"></div>
+      <div class="wcard__meta">
+        <h3>Steel &amp; Co. — Brand Film</h3>
+        <span class="wcard__tag">[ Video ]</span>
+      </div>
+    </article>
+
+    <article class="wcard reveal" data-category="photo" style="--wr:1/1;">
+      <div class="wcard__media" data-index="10"></div>
+      <div class="wcard__meta">
+        <h3>Form Studio — Product Photography</h3>
+        <span class="wcard__tag">[ Photo ]</span>
+      </div>
+    </article>
+
+    <article class="wcard reveal" data-category="photo" style="--wr:1/1;">
+      <div class="wcard__media" data-index="11"></div>
+      <div class="wcard__meta">
+        <h3>Paper Trail — Editorial Series</h3>
+        <span class="wcard__tag">[ Photo ]</span>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <span>© 2026 DAIZE</span>
+  <a href="#top">Back to top</a>
+</footer>
+
+<script src="work.js"></script>
+</body>
+</html>
